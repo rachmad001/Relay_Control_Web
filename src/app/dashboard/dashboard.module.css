@@ -1,0 +1,186 @@
+.container {
+  min-height: 100vh;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.brand h1 {
+  font-size: 1.75rem;
+  color: var(--accent-primary);
+}
+
+.badge {
+  background: rgba(0, 255, 136, 0.1);
+  color: var(--success);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.625rem;
+  font-weight: 800;
+  border: 1px solid rgba(0, 255, 136, 0.2);
+  letter-spacing: 0.1em;
+}
+
+.navActions {
+  display: flex;
+  gap: 1rem;
+}
+
+.addBtn {
+  background: var(--accent-secondary);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  box-shadow: 0 4px 15px rgba(112, 0, 255, 0.2);
+}
+
+.addBtn:hover {
+  background: #8020ff;
+  transform: translateY(-2px);
+}
+
+.logoutBtn {
+  padding: 0.75rem 1.5rem;
+  color: var(--text-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.logoutBtn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+}
+
+.main {
+  flex: 1;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  color: var(--accent-primary);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 5rem;
+  color: var(--text-secondary);
+  border: 2px dashed rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
+}
+
+/* Modal Styling */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  padding: 1rem;
+}
+
+.modal {
+  width: 100%;
+  max-width: 500px;
+  padding: 2.5rem;
+}
+
+.modal h2 {
+  margin-bottom: 2rem;
+  color: var(--accent-primary);
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.inputGroup label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+}
+
+.inputGroup input {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 12px;
+  color: white;
+}
+
+.inputGroup input:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+}
+
+.modalActions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.cancelBtn {
+  flex: 1;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: var(--text-secondary);
+}
+
+.saveBtn {
+  flex: 2;
+  padding: 1rem;
+  background: var(--accent-primary);
+  color: var(--bg-primary);
+  font-weight: 800;
+  border-radius: 12px;
+}
+
+.saveBtn:hover {
+  background: white;
+}

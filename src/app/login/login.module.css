@@ -1,0 +1,113 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.loginBox {
+  width: 100%;
+  max-width: 450px;
+  padding: 3rem;
+  z-index: 1;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--accent-primary);
+}
+
+.header p {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.inputGroup label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding-left: 0.5rem;
+}
+
+.inputGroup input {
+  padding: 1rem 1.25rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.inputGroup input:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  background: rgba(0, 242, 255, 0.05);
+  box-shadow: 0 0 15px rgba(0, 242, 255, 0.1);
+}
+
+.error {
+  color: var(--danger);
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+.submitBtn {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: linear-gradient(90deg, var(--accent-secondary), var(--accent-primary));
+  color: white;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(112, 0, 255, 0.3);
+}
+
+.submitBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(112, 0, 255, 0.5);
+}
+
+.submitBtn:active {
+  transform: translateY(0);
+}
+
+.loading {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.backgroundText {
+  position: absolute;
+  font-size: 25vw;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.02);
+  z-index: 0;
+  user-select: none;
+  pointer-events: none;
+  bottom: -5%;
+  right: -5%;
+}
