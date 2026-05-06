@@ -12,13 +12,14 @@ interface Device {
   name: string;
   pin: number;
   state: boolean;
+  address: string;
 }
 
 export default function DashboardPage() {
   const [devices, setDevices] = useState<Device[]>([]);
   const [loading, setLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);
-  const [currentDevice, setCurrentDevice] = useState<Partial<Device>>({ name: '', pin: 0, state: false });
+  const [currentDevice, setCurrentDevice] = useState<Partial<Device>>({ name: '', pin: 0, state: false, address: '' });
   const [isEditing, setIsEditing] = useState(false);
   const router = useRouter();
 
@@ -52,7 +53,8 @@ export default function DashboardPage() {
       const response = await api.put(`/Device/${id}`, {
         name: device.name,
         pin: device.pin,
-        state: newState
+        state: newState,
+        address: device.address
       });
 
       if (response.data.status) {
@@ -91,7 +93,7 @@ export default function DashboardPage() {
         }
       }
       setShowModal(false);
-      setCurrentDevice({ name: '', pin: 0, state: false });
+      setCurrentDevice({ name: '', pin: 0, state: false, address: '' });
       setIsEditing(false);
     } catch (error) {
       console.error('Failed to save device', error);
@@ -112,7 +114,7 @@ export default function DashboardPage() {
           <span className={styles.badge}>OPERATIONAL</span>
         </div>
         <div className={styles.navActions}>
-          <button onClick={() => { setIsEditing(false); setCurrentDevice({ name: '', pin: 0, state: false }); setShowModal(true); }} className={styles.addBtn}>
+          <button onClick={() => { setIsEditing(false); setCurrentDevice({ name: '', pin: 0, state: false, address: '' }); setShowModal(true); }} className={styles.addBtn}>
             + DEPLOY NEW DEVICE
           </button>
           <button onClick={logout} className={styles.logoutBtn}>LOGOUT</button>
@@ -164,6 +166,16 @@ export default function DashboardPage() {
                   value={currentDevice.pin} 
                   onChange={e => setCurrentDevice({...currentDevice, pin: parseInt(e.target.value)})}
                   placeholder="0-255"
+                  required
+                />
+              </div>
+              <div className={styles.inputGroup}>
+                <label>I2C Address</label>
+                <input 
+                  type="text" 
+                  value={currentDevice.address} 
+                  onChange={e => setCurrentDevice({...currentDevice, address: e.target.value})}
+                  placeholder="e.g. 0x20"
                   required
                 />
               </div>

@@ -8,6 +8,7 @@ interface Device {
   name: string;
   pin: number;
   state: boolean;
+  address: string;
 }
 
 interface DeviceCardProps {
@@ -42,6 +43,11 @@ const DeviceCard: React.FC<DeviceCardProps> = ({ device, onToggle, onEdit, onDel
         <div className={styles.infoRow}>
           <span className={styles.label}>Pin</span>
           <span className={styles.value}>{device.pin}</span>
+        </div>
+        
+        <div className={styles.infoRow}>
+          <span className={styles.label}>Address</span>
+          <span className={styles.value}>{device.address}</span>
         </div>
         
         <div className={styles.statusRow}>
